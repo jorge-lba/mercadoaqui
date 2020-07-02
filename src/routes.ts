@@ -1,6 +1,6 @@
 import express from 'express'
 
-import CategoryController from '@controllers/category.controller'
+import CategoryController from './controllers/category.controller'
 
 const routes = express.Router()
 
