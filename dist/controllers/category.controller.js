@@ -11,9 +11,9 @@ exports.default = {
     async index(request, response) {
         try {
             const params = request.query;
-            const itemsPerPage = typeof params.amount === 'number' ? params.amount : 3;
-            const numberPage = typeof params.page === 'number' ? params.page : 1;
-            const page = numberPage * itemsPerPage;
+            const itemsPerPage = typeof params.amount === 'string' ? params.amount : 3;
+            const pageNumber = typeof params.page === 'string' ? params.page : 3;
+            const page = pageNumber * itemsPerPage;
             const categories = await axios_1.default.get(URL_MELI_API + '/sites/MLB/categories');
             const categoriesFull = [];
             for (let i = page - itemsPerPage; i < page; i++) {

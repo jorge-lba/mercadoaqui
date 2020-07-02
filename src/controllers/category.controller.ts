@@ -7,15 +7,14 @@ config()
 const URL_MELI_API = process.env.URL_MELI_API
 
 export default {
-  async index (request:Request, response:Response) {
+  async index (request: Request, response:Response) {
     try {
       const params:any = request.query
-      const itemsPerPage = typeof params.amount === 'number' ? params.amount : 3
-      const numberPage = typeof params.page === 'number' ? params.page : 1
-      const page = numberPage * itemsPerPage
+      const itemsPerPage = typeof params.amount === 'string' ? params.amount : 3
+      const pageNumber = typeof params.page === 'string' ? params.page : 3
+      const page = pageNumber * itemsPerPage
       const categories = await axios.get(URL_MELI_API + '/sites/MLB/categories')
       const categoriesFull = []
-
       for (let i = page - itemsPerPage; i < page; i++) {
         const category = categories.data[i]
         const details = await axios.get(URL_MELI_API + '/categories/' + category.id)
