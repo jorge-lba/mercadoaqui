@@ -7,7 +7,7 @@ config()
 const URL_MELI_API = process.env.URL_MELI_API
 
 export default {
-  async index (request: Request, response:Response) {
+  async index (request:Request, response:Response) {
     try {
       const params:any = request.query
       const itemsPerPage = typeof params.amount === 'number' ? params.amount : 3
