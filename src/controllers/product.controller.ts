@@ -1,6 +1,8 @@
 import { Request, Response } from 'express'
 import { config } from 'dotenv'
 import axios from 'axios'
+import { getDistance } from 'geolib'
+import { ConnectionStates } from 'mongoose'
 
 config()
 
@@ -39,12 +41,11 @@ export default {
         const result = []
 
         for (const product of products) {
-          const distance = Math.pow((brokenPoint.geolocation.latitude - product.geolocation.latitude), 2) +
-          Math.pow((brokenPoint.geolocation.longitude - product.geolocation.longitude), 2)
+          const distance = getDistance(brokenPoint.geolocation, product.geolocation)
           product.geolocation.distance = distance
           result.push(product)
         }
-
+        console.log(getDistance({ latitude: -23.533491, longitude: -47.5041453 }, { latitude: -23.5339328, longitude: -47.5031775 }))
         result.sort((a:any, b:any) => {
           if (a.geolocation.distance > b.geolocation.distance) {
             return 1
