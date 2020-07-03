@@ -2,7 +2,6 @@ import { Request, Response } from 'express'
 import { config } from 'dotenv'
 import axios from 'axios'
 import { getDistance } from 'geolib'
-import { ConnectionStates } from 'mongoose'
 
 config()
 
