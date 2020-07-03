@@ -11,5 +11,6 @@ routes.get('/categories', CategoryController.index)
 routes.get('/citys/:countrie/:state', CityController.index)
 
 routes.get('/search/:item', ProductController.index)
+routes.get('/search/sort/:item', ProductController.sort)
 
 export default routes
