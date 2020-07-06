@@ -58,7 +58,7 @@ Outros dependências em package.json
 
 *vídeo*
 **PIT**
- - [Proposta](https://www.youtube.com/watch?v=COC1nNzc6nk&rel=0) 
+ - [Proposta](https://www.youtube.com/watch?v=v3_c7idB5ug) 
 
 DEMO VIDEO
  - [DEMO VIDEO](https://www.youtube.com/watch?v=YZxYDWtXPco&) 
